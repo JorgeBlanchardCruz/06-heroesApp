@@ -1,0 +1,17 @@
+{
+    "files.exclude": {
+        "tsconfig.spec.json": true,
+        "tsconfig.json": true,
+        "tsconfig.app.json": true,
+        "README.md": true,
+        "package.json": true,
+        "package-lock.json": true,
+        "angular.json": true,
+        ".gitignore": true,
+        ".editorconfig": true,
+        "node_modules": true,
+        ".angular/cache/17.3.6": true,
+        ".angular/cache": true,
+        ".angular": true
+    }
+}

@@ -3,7 +3,7 @@
         "tsconfig.spec.json": true,
         "tsconfig.json": true,
         "tsconfig.app.json": true,
-        "README.md": true,
+        "README.md": false,
         "package.json": true,
         "package-lock.json": true,
         "angular.json": true,

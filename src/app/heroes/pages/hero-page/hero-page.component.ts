@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HeroesService } from '../../services/heroes.service';
-import { switchMap } from 'rxjs';
+import { delay, switchMap } from 'rxjs';
 import { Hero } from '../../interfaces/hero.interface';
 
 @Component({
@@ -33,6 +33,10 @@ export class HeroPageComponent implements OnInit{
         return;
 
       } );
+  }
+
+  public goBack(): void {
+    this.router.navigateByUrl('heroes/list');
   }
 
 }

@@ -2,10 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatDialog } from '@angular/material/dialog';
 import { switchMap } from 'rxjs';
 
 import { Hero, Publisher } from '../../interfaces/hero.interface';
 import { HeroesService } from '../../services/heroes.service';
+import { ConfirmDialogComponent } from '../../components/confirm-dialog/confirm-dialog.component';
 
 
 @Component({
@@ -35,7 +37,8 @@ export class NewPageComponent implements OnInit{
     private heroesService: HeroesService,
     private activatedRoute: ActivatedRoute,
     private router: Router,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private dialog: MatDialog
   ) { }
 
   ngOnInit(): void {
@@ -86,6 +89,24 @@ export class NewPageComponent implements OnInit{
         this.showSnackBar(`${ hero.superhero } created!`)
       });
 
+  }
+
+  public onDeleteHero() {
+    const dialog = this.dialog.open(ConfirmDialogComponent, {
+      width: '250px',
+      data: this.heroForm.value
+    });
+
+    dialog.afterClosed()
+      .subscribe( (result: boolean) => {
+        if (result) {
+          this.heroesService.deleteHero(this.currentHero.id!)
+            .subscribe( resp => {
+              this.router.navigate(['/heroes']);
+              this.showSnackBar('Hero deleted!');
+            });
+        }
+      });
   }
 
   public showSnackBar(message: string): void {

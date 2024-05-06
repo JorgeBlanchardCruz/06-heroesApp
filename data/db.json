@@ -170,22 +170,13 @@
       "characters": "Norrin Radd"
     },
     {
-      "id": "",
+      "id": "01HX79F1XMQ297BM6GDA0MAWAY",
       "superhero": "Jorge",
       "publisher": "DC Comics",
       "alter_ego": "Shinobi",
       "first_appearance": "GAIN #2",
       "characters": "Jorge",
       "alt_img": "https://mir-s3-cdn-cf.behance.net/project_modules/hd/ccc35684644493.5d63e40d5162c.png"
-    },
-    {
-      "id": "",
-      "superhero": "AD",
-      "publisher": "DC Comics",
-      "alter_ego": "ddd",
-      "first_appearance": "dd",
-      "characters": "aa",
-      "alt_img": ""
     }
   ]
 }

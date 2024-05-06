@@ -1,5 +1,5 @@
 <h2 mat-dialog-title>¿Está seguro?</h2>
-<mat-dialog-content>Este proceso no es reversible, está a punto de eliminar a {{ data.superhero }}</mat-dialog-content>
+<mat-dialog-content>Este proceso no es reversible, está a punto de eliminar a {{ data.superhero | uppercase }}</mat-dialog-content>
 <mat-dialog-actions>
   <button mat-button mat-dialog-close (click)="onNoClick()">¡No!</button>
   <span class="spacer"></span>

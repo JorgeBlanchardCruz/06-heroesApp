@@ -13,7 +13,9 @@
     <input type="password" matInput placeholder="Contraseña" />
   </mat-form-field>
 
-  <button mat-raised-button color="primary">
+  <button mat-raised-button color="primary"
+    (click)="onLogin()"
+    >
     <mat-icon>save</mat-icon>
     Iniciar Sesión
   </button>

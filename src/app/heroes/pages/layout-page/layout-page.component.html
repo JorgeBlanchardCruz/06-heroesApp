@@ -30,7 +30,10 @@
 
     <span class="spacer"></span>
 
-    <button mat-button>
+    <span>Hola {{ currentUser?.user }}!</span>
+
+    <button mat-button
+      (click)="onLogout()">
       <mat-icon>exit_to_app</mat-icon>
       Logout
     </button>

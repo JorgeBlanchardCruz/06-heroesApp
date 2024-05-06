@@ -27,13 +27,14 @@ import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dial
 
     //pipes
     HeroImagePipe,
-      ConfirmDialogComponent
+    ConfirmDialogComponent
   ],
   imports: [
     CommonModule,
     HeroesRoutingModule,
     MaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+
   ]
 })
 export class HeroesModule { }

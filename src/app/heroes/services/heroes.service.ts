@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, catchError, map, of } from 'rxjs';
+import { ulid } from 'ulid';
+
 
 import { Hero } from '../interfaces/hero.interface';
 import { enviroments } from '../../../environments/environments';
@@ -10,7 +12,9 @@ export class HeroesService {
 
   private baseUrl: string = enviroments.baseUrl;
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(
+    private httpClient: HttpClient
+  ) { }
 
   public getHeroes(): Observable<Hero[]> {
     return this.httpClient.get<Hero[]>(`${this.baseUrl}/heroes`);
@@ -29,6 +33,7 @@ export class HeroesService {
   }
 
   public addHero(hero: Hero): Observable<Hero> {
+    hero.id = ulid();
     return this.httpClient.post<Hero>(`${this.baseUrl}/heroes`, hero);
   }
 
